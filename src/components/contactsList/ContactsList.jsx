@@ -2,7 +2,7 @@ import { Contact } from '../contact/Contact';
 import { useSelector } from 'react-redux';
 import { selectFilterdData } from 'Redux/selectors';
 
-export const ContactList = () => {
+export const ContactsList = () => {
   const contacts = useSelector(selectFilterdData);
   return   <ul>
       {contacts.map(contact => {

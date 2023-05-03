@@ -1,27 +1,37 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { fetchTasksThunk } from './operations'
-import { logoutThunk } from '../Auth/authOperations'
+// import { fetchTasksThunk } from './operations'
+import { loginThunk, logoutThunk, registrationThunk } from './authOperations'
 
 const initialState = {
-	items: [],
+	user: { name: '', email: '' },
+	token: null,
+	online: false,
 	loading: false,
-	error: null,
 }
-
-const todoSlice = createSlice({
-	name: '@@tasks',
+const authSlice = createSlice({
+	name: '@@auth',
 	initialState,
 	extraReducers: {
-		[fetchTasksThunk.fulfilled]: (state, { payload }) => {
-			state.items = payload
-			state.error = null
+		[registrationThunk.fulfilled]: (state, { payload }) => {
+			state.user = payload.user
+			state.token = payload.token
+			state.online = true
+		},
+		[loginThunk.pending]: (state, { payload }) => {
+			state.loading = true
+		},
+		[loginThunk.fulfilled]: (state, { payload }) => {
+			state.user = payload.user
+			state.token = payload.token
+			state.online = true
 			state.loading = false
 		},
-		[logoutThunk.fulfilled]: state => {
-			console.log('Очищаємо наші туду')
-			state.items = []
+		[logoutThunk.fulfilled]: (state, { payload }) => {
+			state.user = ''
+			state.token = ''
+			state.online = false
 		},
 	},
 })
 
-export const todoReducer = todoSlice.reducer
+export const authReducer = authSlice.reducer
