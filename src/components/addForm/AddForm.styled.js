@@ -28,8 +28,7 @@ border-radius: 2px;
 &:hover {box-shadow: 1px 2px 2px 3px lightblue;}
 font-size:14px;
 padding: 4px;
-margin:7px;
-
+margin:7px
 `
 export const StyledTitle = styled.h2`
 margin-bottom: 20px;
