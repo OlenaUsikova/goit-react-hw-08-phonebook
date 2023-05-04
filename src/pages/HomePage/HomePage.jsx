@@ -1,3 +1,7 @@
+import { StyledSection, Subtitle } from "./HomePage.styled";
+
 export const HomePage = () => {
-    return <p>Welcome to you Phonebook! Start login</p>;
+    return <StyledSection>
+      <Subtitle>Welcome to you Phonebook! Start registration</Subtitle>
+      </StyledSection>;
   };

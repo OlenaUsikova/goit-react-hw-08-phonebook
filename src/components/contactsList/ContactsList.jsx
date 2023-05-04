@@ -1,11 +1,11 @@
 import { Contact } from '../contact/Contact';
 import { useSelector } from 'react-redux';
-import { selectFilterdData } from 'Redux/selectors';
+import { selectContacts, selectFilterdData } from 'Redux/selectors';
 
 export const ContactsList = () => {
-  const contacts = useSelector(selectFilterdData);
+  const contacts = useSelector(selectContacts);
   return   <ul>
-      {contacts.map(contact => {
+      {contacts.length && contacts.map(contact => {
         return (
           <li key={contact.id}>
             <Contact contact={contact} />

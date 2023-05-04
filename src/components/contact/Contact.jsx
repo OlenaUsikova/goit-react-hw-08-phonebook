@@ -3,7 +3,7 @@ import {Button} from '../addForm/AddForm.styled'
 import { deleteContact } from 'Redux/operations';
 import { useDispatch } from 'react-redux';
 
-export const Contact = ({contact:{name, phone, id}}) => {
+export const Contact = ({contact:{name, number, id}}) => {
     const dispatch = useDispatch()
        return (
         <div style={{ margin: "0 auto",
@@ -12,7 +12,7 @@ export const Contact = ({contact:{name, phone, id}}) => {
         justifyContent: 'center',
          }}>
         <p>{name}:</p>
-        <p>{phone}</p>
+        <p>{number}</p>
         <Button type="button" onClick={() => {dispatch(deleteContact(id))}}>Delete</Button>
         </div>
     )
@@ -21,7 +21,7 @@ export const Contact = ({contact:{name, phone, id}}) => {
 Contact.propTypes = {
     contacts: PropTypes.shape({
     name: PropTypes.string,
-    phone: PropTypes.string,
+    number: PropTypes.string,
     id: PropTypes.string,
   }),
 }

@@ -1,4 +1,4 @@
-import { StyledNav, StyledNavLink } from "components/NavBar/StyledNavigation"
+import { StyledNav, StyledNavLink } from "components/NavBar/Navigation.styled"
 
 export const NavigationBar =()=>{
     return(

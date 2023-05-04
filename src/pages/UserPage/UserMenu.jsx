@@ -1,20 +1,14 @@
-import { ContactsList } from 'components/contactsList/ContactsList';
-import { FindContactForm } from 'components/findContact/FindContactForm';
-import { AddContactForm } from 'components/addForm/AddContactsForm';
+import { useDispatch, useSelector } from 'react-redux'
+import { logoutThunk } from 'Redux/Auth/authOperations';
+import { selectUser } from 'Redux/selectors';
 
-export const ContactsPage = () => {
-  return (
-    <>
-      <div>
-        <p>My page: {}</p>
-        <button>Logout</button>
+
+export const UserMenu = () => {
+  const dispatch = useDispatch();
+  const { email } = useSelector(selectUser);
+  return ( email && <div>
+        <h3>My profile: {email}</h3>
+        <button onClick={() => dispatch(logoutThunk())}>Logout</button>
       </div>
-      <div>
-        <h1>Contacts</h1>
-        <FindContactForm />
-        <ContactsList />
-        <AddContactForm />
-      </div>
-    </>
   );
 };

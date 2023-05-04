@@ -1,5 +1,5 @@
 // import PropTypes from 'prop-types'
-import {Button, StyledForm, StyledInput} from '../addForm/AddForm.styled'
+import {Button, StyledForm, StyledInput, StyledTitle} from '../addForm/AddForm.styled'
 import {useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'Redux/operations';
@@ -28,6 +28,7 @@ export const AddContactForm = () => {
   };
       return (
       <StyledForm onSubmit={handleSubmit}>
+        <StyledTitle>Add new contact</StyledTitle>
         <label>
           Name<br/>
           <StyledInput

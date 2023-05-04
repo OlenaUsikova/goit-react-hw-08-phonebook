@@ -20,16 +20,16 @@ const contactsSlice = createSlice({
   },
   extraReducers: builder => {
     builder
-      .addCase(fetchContacts.fulfilled, (state, action) => {
-        state.contacts.items = action.payload;
+      .addCase(fetchContacts.fulfilled, (state, { payload }) => {
+        state.contacts.items = payload;
       })
-      .addCase(addContact.fulfilled, (state, action) => {
-        state.contacts.items.push(action.payload);
+      .addCase(addContact.fulfilled, (state, { payload }) => {
+        state.contacts.items.push(payload);
       })
 
-      .addCase(deleteContact.fulfilled, (state, action) => {
+      .addCase(deleteContact.fulfilled, (state, { payload }) => {
         state.contacts.items = state.contacts.items.filter(
-          item => item.id !== action.payload
+          item => item.id !== payload
         );
       })
       .addMatcher(
@@ -54,19 +54,6 @@ const contactsSlice = createSlice({
       );
   },
 });
-//   reducers: {
-//     addContacts: (state, { payload }) => {
-//       state.contacts.push(payload);
-//     },
-
-//     deleteContact: (state, { payload }) => {
-//       state.contacts = state.contacts.filter(contact => contact.id !== payload);
-//     },
-//     setFilter: (state, { payload }) => {
-//       state.filter = payload;
-//     },
-//   },
-// });
 
 export const { addContacts, setFilter } = contactsSlice.actions;
 

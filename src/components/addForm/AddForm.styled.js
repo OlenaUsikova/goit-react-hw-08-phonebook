@@ -28,3 +28,7 @@ padding: 4px;
 margin:7px;
 
 `
+export const StyledTitle = styled.h2`
+margin-bottom: 10px;
+margin-top: 10px;
+`

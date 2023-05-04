@@ -13,7 +13,7 @@ export const LoginPage = () => {
 		const email = form.email.value
 		const password = form.password.value
 		dispatch(loginThunk({ email, password }))
-			.then(() => navigate('/tasks'))
+			.then(() => navigate('/contacts'))
 			.catch(() => alert('Try again'))
 		form.reset()
 	}
@@ -26,7 +26,6 @@ export const LoginPage = () => {
 	}
 	return (
 		<div >
-      <h2>Login Form</h2>
 			<form	onSubmit={handleSubmit}>
 				<h1>Login Form</h1>
 				<input

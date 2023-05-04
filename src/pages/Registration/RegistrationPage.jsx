@@ -32,6 +32,7 @@ export const RegisterPage = () => {
 					placeholder='Password...'
 				/>
 				<button>SignUP</button>
+
 			</form>
     </div>;
   };
