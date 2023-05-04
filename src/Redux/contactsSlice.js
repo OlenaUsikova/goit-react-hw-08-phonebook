@@ -23,15 +23,11 @@ const contactsSlice = createSlice({
       .addCase(fetchContacts.fulfilled, (state, { payload }) => {
         state.contacts.items = payload;
       })
-      .addCase(addContact.fulfilled, (state, { payload }) => {
-        state.contacts.items.push(payload);
-      })
-
-      .addCase(deleteContact.fulfilled, (state, { payload }) => {
-        state.contacts.items = state.contacts.items.filter(
-          item => item.id !== payload
-        );
-      })
+      // .addCase(deleteContact.fulfilled, (state, { payload }) => {
+      //   state.contacts.items = state.contacts.items.filter(
+      //     item => item.id !== payload
+      //   );
+      // })
       .addMatcher(
         action => action.type.endsWith('/fulfilled'),
         state => {

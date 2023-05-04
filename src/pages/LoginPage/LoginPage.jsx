@@ -2,6 +2,7 @@ import { loginThunk } from "Redux/Auth/authOperations";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {selectUserLoading} from "../../Redux/selectors"
+import { Button, StyledForm, StyledInput, StyledTitle } from "components/addForm/AddForm.styled";
 
 export const LoginPage = () => {
   const navigate = useNavigate()
@@ -26,20 +27,20 @@ export const LoginPage = () => {
 	}
 	return (
 		<div >
-			<form	onSubmit={handleSubmit}>
-				<h1>Login Form</h1>
-				<input
+			<StyledTitle>Login Form</StyledTitle>
+			<StyledForm	onSubmit={handleSubmit}>
+				<StyledInput
 					name='email'
 					placeholder='Email...'
 					type='text'
 				/>
-				<input
+				<StyledInput
 					name='password'
 					placeholder='Password...'
 					type='password'
 				/>
-				<button>Login</button>
-			</form>
+				<Button>Login</Button>
+			</StyledForm>
 		</div>
 	)
   };

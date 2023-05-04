@@ -1,16 +1,17 @@
 import { Contact } from '../contact/Contact';
 import { useSelector } from 'react-redux';
-import { selectContacts, selectFilterdData } from 'Redux/selectors';
+import { selectFilterdData } from 'Redux/selectors';
+import { StyledBox } from './ContactList.styled';
 
 export const ContactsList = () => {
-  const contacts = useSelector(selectContacts);
-  return   <ul>
-      {contacts.length && contacts.map(contact => {
+  const contacts = useSelector(selectFilterdData);
+  return   <StyledBox>
+      {contacts && contacts.map(contact => {
         return (
           <li key={contact.id}>
             <Contact contact={contact} />
           </li>
         );
       })}
-    </ul>
+    </StyledBox>
 };

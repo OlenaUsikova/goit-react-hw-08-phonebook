@@ -1,4 +1,5 @@
 import { registrationThunk } from 'Redux/Auth/authOperations';
+import { Button, StyledForm, StyledInput, StyledTitle } from 'components/addForm/AddForm.styled';
 import { useDispatch } from 'react-redux'
 
 export const RegisterPage = () => {
@@ -12,27 +13,27 @@ export const RegisterPage = () => {
 		const password = form.password.value
 		dispatch(registrationThunk ({ name, email, password }))
 	}
-    return <div>RegisterPage
-      <h2 >Registration form </h2>
-      <form	onSubmit={handleSubmit}>
-					<input
+    return <div>
+      <StyledTitle >Registration form </StyledTitle>
+      <StyledForm onSubmit={handleSubmit}>
+					<StyledInput
 					name='name'
 					type='text'
 					placeholder='Name...'
 				/>
-				<input
+				<StyledInput
 					name='email'
 					autoComplete='off'
 					type='text'
 					placeholder='Email...'
 				/>
-				<input
+				<StyledInput
 					name='password'
 					type='password'
 					placeholder='Password...'
 				/>
-				<button>SignUP</button>
+				<Button>SignUP</Button>
 
-			</form>
+			</StyledForm>
     </div>;
   };

@@ -22,7 +22,7 @@ export const ContactsPage = () => {
 }, [dispatch])
   return (
     <StyledSection>
-      <UserMenu />
+      {/* <UserMenu /> */}
       <div>
         <FindContactForm />
         <AddContactForm />

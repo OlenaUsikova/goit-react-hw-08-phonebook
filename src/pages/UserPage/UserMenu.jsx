@@ -2,7 +2,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { logoutThunk } from 'Redux/Auth/authOperations';
 import { selectUser } from 'Redux/selectors';
 
-
 export const UserMenu = () => {
   const dispatch = useDispatch();
   const { email } = useSelector(selectUser);

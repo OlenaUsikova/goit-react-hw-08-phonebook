@@ -7,6 +7,7 @@ font-size:16px;
 padding: 8px;
 margin: 10px;
 max-width: 175px;
+background-color:#fce1a2;
 cursor: pointer;
 &:hover {box-shadow: 1px 2px 2px 3px lightblue;}`
 
@@ -19,6 +20,8 @@ width: 400px;
 padding:10px;
 gap: 20px;
 font-size:20px;
+margin: 25px;
+border-radius: 2px;
 `
 export const StyledInput = styled.input`
 border-radius: 2px;
@@ -29,6 +32,7 @@ margin:7px;
 
 `
 export const StyledTitle = styled.h2`
-margin-bottom: 10px;
+margin-bottom: 20px;
 margin-top: 10px;
+margin-left: 40px;
 `
