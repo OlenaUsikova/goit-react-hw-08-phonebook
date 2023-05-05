@@ -1,6 +1,6 @@
 import { Contact } from '../contact/Contact';
 import { useSelector } from 'react-redux';
-import { selectFilterdData } from 'Redux/selectors';
+import { selectFilterdData } from 'Redux/Contacts/selectors';
 import { StyledBox } from './ContactList.styled';
 
 export const ContactsList = () => {

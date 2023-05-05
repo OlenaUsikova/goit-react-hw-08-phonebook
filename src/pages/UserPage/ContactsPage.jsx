@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { StyledSection } from './UserPage.styled';
 import { useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { fetchContacts } from 'Redux/operations';
+import { fetchContacts } from 'Redux/Contacts/operations';
 
 export const ContactsPage = () => {
   const location = useLocation();

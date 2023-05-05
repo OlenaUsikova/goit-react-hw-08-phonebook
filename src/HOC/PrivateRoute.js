@@ -1,4 +1,4 @@
-import { selectIsOnline } from 'Redux/selectors';
+import { selectIsOnline } from 'Redux/Contacts/selectors.js';
 import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router-dom'
 

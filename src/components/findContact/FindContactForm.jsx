@@ -1,6 +1,6 @@
 import React from "react";
 import {StyledInput} from '../addForm/AddForm.styled'
-import { setFilter } from "Redux/contactsSlice";
+import { setFilter } from "Redux/Contacts/contactsSlice";
 import { useDispatch } from "react-redux";
 import { StyledForm, StyledTitle } from "./FindContact.styled";
 

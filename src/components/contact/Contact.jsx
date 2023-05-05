@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import {Button} from '../addForm/AddForm.styled'
-import { deleteContact } from 'Redux/operations';
+import { deleteContact } from 'Redux/Contacts/operations';
 import { useDispatch } from 'react-redux';
 
 export const Contact = ({contact:{name, number, id}}) => {

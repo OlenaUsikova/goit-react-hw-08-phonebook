@@ -1,5 +1,5 @@
 import { logoutThunk } from 'Redux/Auth/authOperations';
-import { selectIsOnline, selectUser } from 'Redux/selectors';
+import { selectIsOnline, selectUser } from 'Redux/Contacts/selectors';
 import {
   Button,
   StyledNav,
