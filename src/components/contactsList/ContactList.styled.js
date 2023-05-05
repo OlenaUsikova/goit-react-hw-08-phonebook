@@ -7,8 +7,8 @@ display: flex;
 flex-direction: column;
 width: 400px;
 padding:20px;
-gap: 20px;
+gap: 10px;
 font-size:20px;
 justify-content: space-between;
-margin: 5px
+margin: 25px;
 `
