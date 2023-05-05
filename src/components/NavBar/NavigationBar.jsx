@@ -17,7 +17,7 @@ export const NavigationBar = () => {
     <StyledNav>
       <div>
         <StyledNavLink to="/">Home</StyledNavLink>
-        <StyledNavLink to="contacts">Contacts</StyledNavLink>
+        {onLine && <StyledNavLink to="contacts">Contacts</StyledNavLink>}
       </div>
       {!onLine ? (
         <div>

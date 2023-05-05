@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 // import { fetchTasksThunk } from './operations'
-import { loginThunk, logoutThunk, registrationThunk } from './authOperations'
+import { loginThunk, logoutThunk, refreshThunk, registrationThunk } from './authOperations'
 
 const initialState = {
 	user: { name: '', email: '' },
@@ -30,6 +30,18 @@ const authSlice = createSlice({
 			state.user = ''
 			state.token = ''
 			state.online = false
+		},
+		[refreshThunk.pending]: (state) => {
+			state.loading = true
+		},
+		[refreshThunk.fulfilled]: (state, { payload }) => {
+			state.online = true
+			state.loading = false
+			state.user = payload
+		},
+		[refreshThunk.rejected]: (state, { payload }) => {
+			state.error = payload
+			state.loading = false
 		},
 	},
 })
